@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.17368424, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.46218258, b: 0, a: 1}
   outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.17368424, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.46218258, b: 0, a: 1}
   outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -502,6 +502,8 @@ GameObject:
   - component: {fileID: 1550730621}
   - component: {fileID: 1550730620}
   - component: {fileID: 1550730622}
+  - component: {fileID: 1550730624}
+  - component: {fileID: 1550730623}
   m_Layer: 0
   m_Name: Selection Manager
   m_TagString: Untagged
@@ -521,7 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4ff5c33e9b34f9763faa73a57710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
 --- !u!4 &1550730621
 Transform:
   m_ObjectHideFlags: 0
@@ -545,11 +546,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1550730619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 250143fc2010d0a409b272405b2eaa7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7731a52fce8a09f4ebf16d4d2ab0f6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: 76191a502167024488da6dc320d2e35a, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 5a21f72b8943e09419e0e25fa746b43e, type: 2}
+--- !u!114 &1550730623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550730619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e09ce08ee123f47beae96dc542cddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1550730624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550730619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303e1431ab81ab34fabce5737a2769fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableTag: Selectable
 --- !u!1 &1671565416
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.17368424, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.46218258, b: 0, a: 1}
   outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []
@@ -773,7 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.17368424, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0.46218258, b: 0, a: 1}
   outlineWidth: 0
   precomputeOutline: 0
   bakeKeys: []

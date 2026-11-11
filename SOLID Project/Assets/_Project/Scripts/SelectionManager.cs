@@ -2,39 +2,31 @@
 using UnityEngine.SceneManagement;
 
 public class SelectionManager : MonoBehaviour {
-    [SerializeField] private string selectableTag = "Selectable";
-
     private ISelectionResponse selectionResponse;
+    private IRayProvider rayProvider;
+    private ISelector selector;
 
-    private Transform _selection;
+    private Transform currentSelection;
 
     private void Awake() {
         SceneManager.LoadScene("Environment", LoadSceneMode.Additive);
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
 
         selectionResponse = GetComponent<ISelectionResponse>();
+        rayProvider = GetComponent<IRayProvider>();
+        selector = GetComponent<ISelector>();
     }
 
     private void Update() {
-        if (_selection != null) {
-            selectionResponse.OnDeselect(_selection);
+        if (currentSelection != null) {
+            selectionResponse.OnDeselect(currentSelection);
         }
 
-        #region MyRegion
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
-        _selection = null;
-        if (Physics.Raycast(ray, out var hit)) {
-            var selection = hit.transform;
+        selector.Check(rayProvider.CreateRay());
+        currentSelection = selector.GetSelection();
 
-            if (selection.CompareTag(selectableTag)) {
-                _selection = selection;
-            }
-        }
-        #endregion
-
-        if (_selection != null) {
-            selectionResponse.OnSelect(_selection);
+        if (currentSelection != null) {
+            selectionResponse.OnSelect(currentSelection);
         }
     }
 }
