@@ -6,7 +6,7 @@ public class Selectable : MonoBehaviour {
 
     [HideInInspector] public float lookPercentage;
 
-    void Update() {
-        lookPercentageLabel.text = lookPercentage.ToString("F3");
-    }
+    // void Update() {
+    //     lookPercentageLabel.text = lookPercentage.ToString("F3");
+    // }
 }
